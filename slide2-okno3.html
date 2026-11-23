@@ -200,6 +200,12 @@ button{border:1px solid var(--line);border-radius:10px;background:white;color:va
 .inlineSlotHandle[data-edge="ne"],.inlineSlotHandle[data-edge="sw"]{cursor:nesw-resize}
 .slotInspectorIntro{background:#eaf4f8;border:1px solid #b9dce7;border-radius:10px;padding:10px;font-size:12px;color:#345c69;line-height:1.5;margin-bottom:10px}
 .slotInspectorIntro button{margin-top:7px;background:#fff;border-color:#b4d4df;color:#315e71;padding:7px 10px}
+
+/* FIX 2026-11-23: Static text boxes may overlap inputs.
+   They must never intercept mouse/touch/keyboard focus from answer fields.
+   Inline text exercises keep interaction through their own answerField controls. */
+.viewerCanvas > .viewPiece.viewtext { pointer-events: none !important; }
+.stage.preview > .piece.text-piece { pointer-events: none !important; }
 </style>
 </head>
 <body>
